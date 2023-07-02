@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    
+    <style>
+    
+    .calculator{
+        border: 1px solid black;
+        width: 250px;
+        margin: auto;
+        padding: 30px 10px;
+    }
+
+    #result-display {
+        border: 1px solid black;
+        width: 178px;
+        height: 30px;
+        border-radius: 5%;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <h1>Basic calculator</h1>
+    
+        <form>
+            <div class="form-row">
+                <label for="first-value">First value</label><br>
+                <input id="first-value" type="number">
+            </div><br>
+    
+            <div class="form-row">
+                <label for="second-value">Second value</label><br>
+                <input id="second-value" type="number">
+            </div><br>
+        </form>
+        
+        <div id="operator-button-container">
+            <p>Choose your operation:</p>
+            <button class="operator-button" id="add">+</button>
+            <button class="operator-button" id="subtract">-</button>
+            <button class="operator-button" id="multiply">*</button>
+            <button class="operator-button" id="divide">/</button>
+        </div><br>
+    
+        <div id="result-display"></div>
+    </div>
+
+    <script>
+        const add = document.getElementById('add');
+        const subtract = document.getElementById('subtract');
+        const multiply = document.getElementById('multiply');
+        const divide = document.getElementById('divide');
+        const display = document.getElementById('result-display');
+        const value1 = document.getElementById('first-value');
+        const value2 = document.getElementById('second-value');
+
+        add.addEventListener('click', function(){
+            let ans = value1.valueAsNumber + value2.valueAsNumber;
+            display.innerHTML = ans;
+        })
+
+        subtract.addEventListener('click', function(){
+            let ans = value1.valueAsNumber - value2.valueAsNumber;
+            display.innerHTML = ans;
+        })
+
+        multiply.addEventListener('click', function(){
+            let ans = value1.valueAsNumber * value2.valueAsNumber;
+            display.innerHTML = ans;
+        })
+
+        divide.addEventListener('click', function(){
+            let ans = value1.valueAsNumber / value2.valueAsNumber;
+            display.innerHTML = ans;
+        })
+
+    </script>
+    
+</body>
+</html>
